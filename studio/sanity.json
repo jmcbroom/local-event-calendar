@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "8i111c0b",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "local-events"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/dashboard",
+    "@sanity/color-input",
+    "markdown",
+    "redeploy-netlify-site"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #fcfcfc;
+  font-family: "Overpass", sans-serif;
+  @apply font-light;
+}
+
+/* Links */
+a {
+  color: #2965ff;
+  @apply underline;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Overpass", sans-serif;
+  @apply font-semibold;
+}
+
+h1,
+h2 {
+  @apply my-2;
+}
+
+h3,
+h4 {
+  @apply my-2;
+}
+
+h1 {
+  @apply text-xl;
+  @apply md:text-2xl;
+}
+
+h2 {
+  @apply text-lg;
+  @apply md:text-xl;
+}
+
+h3 {
+  @apply text-base;
+  @apply md:text-lg;
+}
+
+/* Paragraphs */
+
+p {
+  @apply mt-2;
+  @apply mb-4;
+}
+
+/* Lists */
+ul, ol {
+  @apply my-4;
+}
+
+ul {
+  @apply list-disc;
+  @apply list-outside;
+  @apply ml-6;
+}
+
+ol {
+  @apply list-decimal;
+  @apply list-outside;
+  @apply ml-6;
+}
+
+li > ul {
+  @apply ml-4;
+  @apply list-disc;
+}
+
+ul ul {
+  @apply my-0;
+}
+
+pre {
+  @apply p-4;
+  @apply my-4;
+  @apply bg-gray-100;
+}
+
+header, footer {
+  @apply bg-amber-50;
+}
+
+/* Header */
+header {
+  @apply border-b-1;
+  @apply border-black;
+  @apply pl-5;
+  @apply pr-7;
+  @apply md:px-5;
+}
+
+header > .container {
+  @apply flex;
+  @apply items-center;
+  @apply justify-between;
+  @apply mx-auto;
+  @apply max-w-screen-xl;
+}
+
+header h1,
+footer h1 {
+  @apply text-base;
+  @apply md:text-xl;
+  @apply w-3/4;
+  @apply md:w-auto;
+  @apply hover:cursor-pointer;
+}
+
+/* Nav */
+
+nav {
+  @apply h-16;
+  @apply md:h-24;
+  @apply flex;
+  @apply items-center;
+}
+
+nav > ul {
+  @apply hidden;
+  @apply md:flex;
+  @apply items-center;
+  @apply gap-5;
+  @apply list-none;
+}
+
+.nav-here {
+  @apply border-black;
+  @apply border-1;
+  @apply bg-gray-50;
+  @apply font-normal;
+}
+
+nav li,
+footer button {
+  @apply text-sm;
+  @apply px-6;
+  @apply py-3;
+  @apply rounded-full;
+  @apply bg-primary;
+  @apply bg-opacity-30;
+  @apply hover:cursor-pointer;
+}
+
+nav li:hover,
+footer button:hover {
+  @apply bg-gray-200;
+}
+
+/* Main */
+main {
+  @apply max-w-6xl;
+  @apply mx-auto;
+  @apply pt-6;
+  @apply px-5;
+  @apply md:px-3;
+  @apply pb-20;
+}
+
+main section {
+  @apply border-2;
+  @apply border-gray-300;
+  @apply bg-white;
+}
+
+main section h2 {
+  @apply text-lg;
+  @apply leading-6;
+  @apply bg-primary;
+  @apply bg-opacity-25;
+  @apply px-8;
+  @apply py-3;
+  @apply my-0;
+}
+
+/* Footer */
+footer {
+  @apply border-t-1;
+  @apply border-black;
+  @apply grid-cols-2;
+  @apply pl-5;
+  @apply pr-7;
+  @apply md:px-5;
+  @apply pt-8;
+  @apply md:pt-11;
+}
+
+footer a:hover {
+  cursor: pointer;
+}
+
+footer button {
+  @apply mt-4;
+  @apply md:mt-7;
+}
+
+footer > .container {
+  @apply flex;
+  @apply flex-col-reverse;
+  @apply md:flex;
+  @apply md:flex-row;
+  @apply md:items-start;
+  @apply md:justify-between;
+  @apply md:mx-auto;
+  @apply md:max-w-screen-xl;
+}
+
+footer > p {
+  @apply pt-10;
+  @apply md:pt-8;
+  @apply pb-6;
+  @apply md:pb-16;
+}
+
+.footer-nav {
+  @apply flex;
+  @apply flex-col;
+  @apply md:grid;
+  @apply md:grid-cols-2;
+  @apply md:grid-rows-4;
+  @apply md:grid-flow-col;
+  @apply gap-2;
+  @apply md:gap-4;
+}
+
+footer span,
+.mobile-nav-item {
+  @apply text-xl;
+  @apply md:text-2xl;
+  @apply leading-8;
+  @apply md:leading-8;
+  @apply underline;
+  @apply font-medium;
+}
+
+/* submit a tip */
+.submit-form > div {
+  @apply flex;
+  @apply flex-col;
+  @apply mb-6;
+}
+
+.submit-form label:not(.nostyle) {
+  @apply text-sm;
+  @apply md:text-lg;
+  @apply leading-6;
+  @apply py-2.5;
+  @apply px-3;
+  @apply md:px-6;
+  @apply bg-primary;
+  @apply bg-opacity-25;
+}
+
+.submit-form input, .submit-form radiogroup {
+  @apply text-sm;
+  @apply md:text-base;
+  @apply leading-6;
+  @apply px-3;
+  @apply md:px-5;
+  @apply py-5;
+  @apply border-2;
+  @apply file:rounded-full;
+  @apply file:hover:cursor-pointer;
+  @apply file:border-0;
+  @apply file:px-6;
+  @apply file:py-2.5;
+  @apply file:py-2.5;
+  @apply file:mr-4;
+  @apply file:text-sm;
+}
+
+.submit-form textarea {
+  @apply py-3;
+  @apply text-base;
+  @apply leading-6;
+  @apply border-2;
+  @apply px-5;
+}
+
+.submit-form .submit-button {
+  @apply rounded-lg;
+  @apply bg-tertiary;
+  @apply bg-opacity-60;
+  @apply hover:bg-tertiary;
+  @apply hover:bg-opacity-40;
+  @apply py-2.5;
+  @apply px-10;
+  @apply w-auto;
+  @apply text-right;
+  @apply text-sm;
+  @apply md:text-lg;
+  @apply leading-9;
+  @apply md:leading-10;
+  @apply font-medium;
+  @apply hover:cursor-pointer;
+}
+
+#geocoder {
+  @apply w-full;
+}
+
+.mapboxgl-ctrl-geocoder {
+  box-shadow: none !important;
+  max-width: none !important;
+  @apply border-1;
+  @apply border-black;
+  @apply rounded-none !important;
+  @apply w-full !important;
+  @apply max-w-full !important;
+  @apply items-center;
+  @apply flex;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  @apply h-10 !important;
+  @apply w-full !important;
+  @apply max-w-full !important;
+  @apply py-4 !important;
+}
+
+::selection {
+  background: rgba(255, 230, 140, 1);
+}
+::-moz-selection {
+  background: rgba(255, 230, 140, 1);
+}

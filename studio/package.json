@@ -1,0 +1,42 @@
+{
+  "name": "local-events-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Jimmy McBroom <james.mcbroom@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.3.0",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.1",
+    "@reach/auto-id": "^0.17.0",
+    "@sanity/base": "^2.30.1",
+    "@sanity/color-input": "^2.30.1",
+    "@sanity/core": "^2.30.2",
+    "@sanity/dashboard": "^2.30.1",
+    "@sanity/default-layout": "^2.30.1",
+    "@sanity/default-login": "^2.30.1",
+    "@sanity/desk-tool": "^2.30.1",
+    "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/vision": "^2.30.1",
+    "@turf/bbox": "^6.5.0",
+    "eslint": "^8.6.0",
+    "get-it": "^5.0.3",
+    "mapbox-gl": "^2.7.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "react-number-format": "^5.0.0",
+    "sanity-plugin-markdown": "^2.1.1",
+    "sanity-super-pane": "^1.0.0-alpha.11",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {}
+}
