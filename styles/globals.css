@@ -1,19 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background: #fcfcfc;
-  font-family: "Overpass", sans-serif;
+  background: #fff;
+  font-family: "IBM Plex Sans", sans-serif;
   @apply font-light;
 }
 
 /* Links */
 a {
-  color: #2965ff;
+  @apply text-link;
   @apply underline;
+  @apply hover:cursor-pointer;
 }
 
 /* Headings */
@@ -23,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Overpass", sans-serif;
+  font-family: "Archivo", sans-serif;
   @apply font-semibold;
 }
 
@@ -92,7 +93,10 @@ pre {
 }
 
 header, footer {
-  @apply bg-amber-50;
+  @apply bg-primary;
+  @apply bg-opacity-40;
+  @apply border-secondary;
+  @apply border-dashed;
 }
 
 /* Header */
@@ -109,7 +113,7 @@ header > .container {
   @apply items-center;
   @apply justify-between;
   @apply mx-auto;
-  @apply max-w-screen-xl;
+  @apply max-w-4xl;
 }
 
 header h1,
@@ -124,8 +128,6 @@ footer h1 {
 /* Nav */
 
 nav {
-  @apply h-16;
-  @apply md:h-24;
   @apply flex;
   @apply items-center;
 }
@@ -134,40 +136,40 @@ nav > ul {
   @apply hidden;
   @apply md:flex;
   @apply items-center;
-  @apply gap-5;
+  @apply gap-4;
   @apply list-none;
 }
 
 .nav-here {
   @apply border-black;
-  @apply border-1;
-  @apply bg-gray-50;
-  @apply font-normal;
+  @apply border-2;
+  @apply font-semibold;
+  @apply hover:bg-white;
 }
 
 nav li,
 footer button {
   @apply text-sm;
-  @apply px-6;
-  @apply py-3;
-  @apply rounded-full;
-  @apply bg-primary;
+  @apply rounded-md;
+  @apply font-medium;
+  @apply px-12;
+  @apply py-2;
   @apply bg-opacity-30;
   @apply hover:cursor-pointer;
 }
 
 nav li:hover,
 footer button:hover {
-  @apply bg-gray-200;
 }
 
 /* Main */
 main {
   @apply max-w-6xl;
   @apply mx-auto;
-  @apply pt-6;
+  @apply pt-4;
+  @apply md:pt-6;
   @apply px-5;
-  @apply md:px-3;
+  @apply md:px-5;
   @apply pb-20;
 }
 
@@ -190,13 +192,10 @@ main section h2 {
 /* Footer */
 footer {
   @apply border-t-1;
-  @apply border-black;
   @apply grid-cols-2;
   @apply pl-5;
   @apply pr-7;
-  @apply md:px-5;
   @apply pt-8;
-  @apply md:pt-11;
 }
 
 footer a:hover {
@@ -216,7 +215,7 @@ footer > .container {
   @apply md:items-start;
   @apply md:justify-between;
   @apply md:mx-auto;
-  @apply md:max-w-screen-xl;
+  @apply md:max-w-4xl;
 }
 
 footer > p {
@@ -256,13 +255,13 @@ footer span,
 
 .submit-form label:not(.nostyle) {
   @apply text-sm;
-  @apply md:text-lg;
-  @apply leading-6;
-  @apply py-2.5;
+  @apply md:text-sm;
+  @apply leading-4;
+  @apply py-2;
   @apply px-3;
-  @apply md:px-6;
+  @apply md:px-4;
   @apply bg-primary;
-  @apply bg-opacity-25;
+  @apply bg-opacity-90;
 }
 
 .submit-form input, .submit-form radiogroup {
@@ -270,7 +269,7 @@ footer span,
   @apply md:text-base;
   @apply leading-6;
   @apply px-3;
-  @apply md:px-5;
+  @apply md:px-3;
   @apply py-5;
   @apply border-2;
   @apply file:rounded-full;
@@ -294,7 +293,7 @@ footer span,
 .submit-form .submit-button {
   @apply rounded-lg;
   @apply bg-tertiary;
-  @apply bg-opacity-60;
+  @apply bg-opacity-50;
   @apply hover:bg-tertiary;
   @apply hover:bg-opacity-40;
   @apply py-2.5;
@@ -333,8 +332,54 @@ footer span,
 }
 
 ::selection {
-  background: rgba(255, 230, 140, 1);
+  @apply bg-tertiary;
+  @apply bg-opacity-50;
 }
 ::-moz-selection {
-  background: rgba(255, 230, 140, 1);
+  @apply bg-tertiary;
+  @apply bg-opacity-50;
+}
+
+.filters button {
+  @apply bg-gray-100;
+  @apply text-sm;
+  @apply p-2;
+  @apply px-4;
+}
+
+.filter-heading {
+  @apply py-2;
+  @apply mr-2; 
+  @apply md:mr-4; 
+  @apply text-gray-600;
+}
+
+.button-group button[data-state="on"] {
+  @apply bg-tertiary;
+  @apply bg-opacity-50;
+}
+
+.button-group {
+  @apply inline-flex;
+  @apply rounded;
+  @apply items-center;
+}
+
+.button-group input {
+  @apply rounded;
+}
+
+.button-group button {
+  @apply border-l-1;
+}
+
+.button-group button:first-child {
+  @apply rounded-tl;
+  @apply rounded-bl;
+  @apply border-l-0;
+}
+
+.button-group button:last-child {
+  @apply rounded-tr;
+  @apply rounded-br;
 }

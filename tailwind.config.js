@@ -3,14 +3,22 @@ module.exports = {
   darkMode: `media`,
   theme: {
     extend: {
-      colors: {
-        'primary': '#798487',
-        'secondary': '#2B2D34',
-        'tertiary': '#88291F',
-      },
       borderWidth: {
         1: '1px'
       },
+      colors: {
+        // https://colors.muz.li/palette/518173/d8dace/77b6c0/283533/96c465
+        'primary': '#d8dace',
+        'secondary': '#283533',
+        'tertiary': '#77b6c0',
+        'venue': '#518173',
+        'event': '#96c465',
+        'link': '#2a4192'
+      },
+      gridTemplateColumns: {
+        'filters': '1fr 5fr',
+        'venue': '3fr 2fr'
+      }
     },
   },
   variants: {

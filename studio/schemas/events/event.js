@@ -1,4 +1,5 @@
 import eventFields from "./eventFields";
+import eventPreview from "./eventPreview";
 
 export default {
   title: "Event",
@@ -7,4 +8,5 @@ export default {
   fields: [
     ...eventFields
   ],
+  preview: eventPreview
 };

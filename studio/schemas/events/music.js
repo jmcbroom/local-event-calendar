@@ -1,4 +1,5 @@
 import eventFields from "./eventFields";
+import eventPreview from "./eventPreview";
 
 export default {
   title: "Music",
@@ -13,4 +14,5 @@ export default {
       type: "url"
     },
   ],
+  preview: eventPreview
 };

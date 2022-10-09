@@ -15,7 +15,7 @@ export default function Layout(props) {
       {!nav && <Header { ...{nav, showNav, ...props}} />}
 
       {nav && 
-        <div className="absolute w-screen h-screen bg-ternblue p-3">
+        <div className="absolute w-screen h-screen bg-tertiary bg-opacity-70 p-4">
           <FontAwesomeIcon icon={faWindowClose} onClick={() => showNav(false)} className='h-6 absolute right-6 top-5 text-dkgray' />
           <div className="">
             {sections.map(s => (

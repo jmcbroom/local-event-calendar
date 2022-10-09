@@ -21,8 +21,18 @@ export default function IndexPage(props) {
         <meta property="og:description" content={description} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div>
-        <p>{description}</p>
+      <div className="max-w-3xl mx-auto">
+        <h1>Welcome to {siteTitle}!</h1>
+        <p className="py-2">
+          {`
+          I'm building this site because I'm tired of finding out about things after they happen!
+
+          So far, it's pretty simple, but I'm hoping to make it better with your help.
+          
+          `}
+
+        </p>
+
       </div>
     </>
   );

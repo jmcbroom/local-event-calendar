@@ -1,4 +1,5 @@
 import Head from "next/head";
+import PublicVenueForm from "../components/PublicVenueForm";
 import VenueCard from "../components/VenueCard";
 import { getAllVenues, getSiteSettings } from "../lib/api";
 
@@ -8,16 +9,14 @@ export async function getStaticProps(context) {
   return {
     props: {
       venues,
-      ...data
+      ...data,
     },
   };
 }
 
 export default function VenuesPage(props) {
-  let { venues } = props; 
+  let { venues } = props;
   let { siteTitle, description } = props;
-
-  console.log(venues)
 
   return (
     <>
@@ -29,13 +28,15 @@ export default function VenuesPage(props) {
         <meta property="og:description" content={description} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div>
-        <h1>{venues.length} venues where things are happening:</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 pt-4 md:pt-10">
-
-        {venues.map(venue => <VenueCard venue={venue} key={venue.id}/>)}
-        </div>
+      <div className="max-w-3xl mx-auto">
+        <h1>Venues</h1>
+        <ul className="max-w-2xl mx-auto flex flex-col gap-4 pt-4 md:pt-10 list-none m-0">
+          {venues.map((venue) => (
+            <VenueCard venue={venue} key={venue.id} />
+          ))}
+        </ul>
       </div>
+      <PublicVenueForm />
     </>
   );
 }

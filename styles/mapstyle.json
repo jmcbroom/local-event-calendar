@@ -280,7 +280,7 @@
           "url": "mapbox://mapbox.mapbox-streets-v8",
           "type": "vector"
       },
-      "projects": {
+      "venues": {
         "type": "geojson",
         "data": {
           "type": "FeatureCollection",
@@ -2654,8 +2654,8 @@
           }
       },
       {
-        "id": "projects-fill",
-        "source": "projects",
+        "id": "venues-fill",
+        "source": "venues",
         "type": "fill",
         "minzoom": 14.5,
         "paint": {
@@ -2667,8 +2667,8 @@
         }
       },
       {
-        "id": "projects-line",
-        "source": "projects",
+        "id": "venues-line",
+        "source": "venues",
         "type": "line",
         "minzoom": 14.5,
         "layout": {
@@ -2684,7 +2684,7 @@
         }
       },
       {
-        "id": "projects-circle",
+        "id": "venues-circle",
         "source": "centroids",
         "type": "circle",
         "maxzoom": 14.5,
@@ -2699,7 +2699,7 @@
         }
       },
       {
-        "id": "projects-icon",
+        "id": "venues-icon",
         "source": "centroids",
         "type": "symbol",
         "layout": {
@@ -2710,7 +2710,7 @@
         }
       },
       {
-        "id": "projects-label",
+        "id": "venues-label",
         "source": "centroids",
         "type": "symbol",
         "minzoom": 14.5,

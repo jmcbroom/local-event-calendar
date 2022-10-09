@@ -20,6 +20,7 @@
     "@mdx-js/react": "^2.0.0",
     "@netlify/plugin-nextjs": "^4.2.0",
     "@next/mdx": "^12.1.0",
+    "@radix-ui/react-toggle-group": "^1.0.0",
     "@sanity/image-url": "^1.0.1",
     "@turf/bbox": "^6.5.0",
     "@turf/centroid": "^6.5.0",

@@ -1,4 +1,5 @@
 import eventFields from "./eventFields";
+import eventPreview from "./eventPreview";
 
 export default {
   title: "Movie",
@@ -20,4 +21,5 @@ export default {
       of: [{type: "datetime"}]
     }
   ],
+  preview: eventPreview
 };

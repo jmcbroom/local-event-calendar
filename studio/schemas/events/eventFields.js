@@ -37,6 +37,7 @@ export default [
       source: (doc) => `${doc.title}-${dayjs(doc.startTime).format('YYYY-MM-DD')}`,
       maxLength: 96,
     },
+    validation: Rule => Rule.required(),
   },
   {
     title: "Link",
@@ -49,7 +50,7 @@ export default [
     name: "synopsis",
     description: "Short rich-text event description",
     type: "text",
-    validation: Rule => Rule.max(280)
+    validation: Rule => Rule.required().max(280)
   },
   {
     title: "Description",
@@ -68,6 +69,32 @@ export default [
     name: "price",
     description: "The cost of the event",
     type: "number"
+  },
+  {
+    title: "Age Range",
+    name: "ageRange",
+    description: "The age range for the event",
+    type: "string",
+    options: {
+      layout: 'dropdown',
+      list: [
+        'all ages',
+        '18+',
+        '21+'
+      ]
+    }
+  },
+  {
+    title: "Family-friendly",
+    name: 'familyFriendly',
+    description: "Is the event family-friendly?",
+    type: 'boolean'
+  },
+  {
+    title: "Outdoors",
+    name: 'outdoors',
+    description: "Is the event outdoors?",
+    type: 'boolean'
   },
   {
     title: "Media",

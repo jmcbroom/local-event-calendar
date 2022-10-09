@@ -11,6 +11,7 @@ import venue from "./venue";
 import event from "./events/event";
 import movie from './events/movie';
 import music from "./events/music";
+import indexPage from "./indexPage";
 
 export default createSchema({
   name: "default",
@@ -21,6 +22,7 @@ export default createSchema({
 
     // singletons
     siteSettings,
+    indexPage,
 
     // models
     venue,
