@@ -6,12 +6,10 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import blockContent from "./blockContent";
 
 // Import the singletons
+import event from "./events/event";
+import indexPage from "./indexPage";
 import siteSettings from "./siteSettings";
 import venue from "./venue";
-import event from "./events/event";
-import movie from './events/movie';
-import music from "./events/music";
-import indexPage from "./indexPage";
 
 export default createSchema({
   name: "default",
@@ -29,8 +27,6 @@ export default createSchema({
 
     // event types
     event,
-    movie,
-    music
     
   ]),
 });

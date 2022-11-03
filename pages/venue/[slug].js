@@ -35,7 +35,6 @@ export async function getStaticProps(context) {
 export default function VenuePage(props) {
   let { venue } = props;
   venue.feature = JSON.parse(venue.location)[0];
-  console.log(venue);
   let { events } = venue;
   let { siteTitle, description } = props;
 

@@ -11,12 +11,13 @@ module.exports = {
         'primary': '#d8dace',
         'secondary': '#283533',
         'tertiary': '#77b6c0',
-        'venue': '#518173',
+        'venue': '#77b6c0',
+        // 'venue': '#518173',
         'event': '#96c465',
         'link': '#2a4192'
       },
       gridTemplateColumns: {
-        'filters': '1fr 5fr',
+        'filters': '2fr 3fr',
         'venue': '3fr 2fr'
       }
     },

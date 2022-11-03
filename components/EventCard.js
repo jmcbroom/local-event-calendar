@@ -20,7 +20,7 @@ const EventTicketPrice = ({ event }) => {
       <>
         <span className="flex items-center gap-1">
           Cost:{` `}
-          <a href={event.ticketLink}>
+          <a href={event.ticketLink} target="_blank" rel="noreferrer">
             <span className="flex items-center gap-1">
               ${event.price.toFixed(2)}
               <FontAwesomeIcon icon={faExternalLinkAlt} className="h-2" />
@@ -34,13 +34,13 @@ const EventTicketPrice = ({ event }) => {
   }
 };
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event, showDate=true }) => {
   return (
-    <li>
+    <li className="list-none">
       <div className="flex flex-col">
-        <div className="flex items-center gap-2 text-sm text-gray-600 w-auto pb-1">
+        {showDate && <div className="flex items-center gap-2 text-sm text-gray-600 w-auto pb-1">
           <span className="font-medium">{dayjs(event.startTime).format("dddd, MMMM D")}</span>
-        </div>
+        </div>}
         <div className="p-3 md:p-4 md:p-200 bg-event bg-opacity-50">
           <h3 className="m-0">
             <Link href={`/event/${event.slug}`} passHref>
@@ -58,12 +58,12 @@ const EventCard = ({ event }) => {
           </div> */}
           <div className="pt-2 text-sm grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-0">
             <EventTicketPrice {...{ event }} />
-            <a href={event.link} target="_blank" rel="noreferrer">
+            {event.eventLink && <a href={event.eventLink} target="_blank" rel="noreferrer">
               <span className="flex items-center gap-1">
                 Event link
                 <FontAwesomeIcon icon={faExternalLinkAlt} className="h-2" />
               </span>
-            </a>
+            </a>}
           </div>
         </div>
         {event.venue && (

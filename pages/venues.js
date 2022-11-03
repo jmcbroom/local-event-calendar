@@ -32,7 +32,7 @@ export default function VenuesPage(props) {
         <h1>Venues</h1>
         <ul className="max-w-2xl mx-auto flex flex-col gap-4 pt-4 md:pt-10 list-none m-0">
           {venues.map((venue) => (
-            <VenueCard venue={venue} key={venue.id} />
+            <VenueCard venue={venue} key={venue._id} />
           ))}
         </ul>
       </div>

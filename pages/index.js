@@ -1,15 +1,24 @@
+import dayjs from "dayjs";
 import Head from "next/head";
-import { getSiteSettings } from "../lib/api";
+import PortableText from "react-portable-text";
+import EventCard from "../components/EventCard";
+import { getSingletonByName, getSiteSettings, getUpcomingEvents } from "../lib/api";
+import { eventInRange } from "../lib/common";
 
 export async function getStaticProps(context) {
   const data = await getSiteSettings();
+  const indexPage = await getSingletonByName('indexPage')
+  const events = await getUpcomingEvents()
   return {
-    props: {...data},
+    props: {events, ...data, ...indexPage},
   };
 }
 
 export default function IndexPage(props) {
-  let { siteTitle, description } = props;
+  let { siteTitle, description, indexPageContent  } = props;
+
+  let { events } = props;
+  let eventsToday = events.filter(event => eventInRange(dayjs().format('YYYY-MM-DD'), dayjs().add(1, 'day').format('YYYY-MM-DD'), event))
 
   return (
     <>
@@ -22,17 +31,11 @@ export default function IndexPage(props) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="max-w-3xl mx-auto">
-        <h1>Welcome to {siteTitle}!</h1>
-        <p className="py-2">
-          {`
-          I'm building this site because I'm tired of finding out about things after they happen!
-
-          So far, it's pretty simple, but I'm hoping to make it better with your help.
-          
-          `}
-
-        </p>
-
+        <PortableText content={indexPageContent} projectId={`8i111c0b`} dataset={`production`} className="p-2 md:p-4 bg-tertiary bg-opacity-50" />
+        <div className="p-2 md:p-4">
+          <h2>{eventsToday.length > 0 ? `Today's events` : `No events today`}</h2>
+          {eventsToday.map(event => <EventCard event={event} key={event.id} showDate={false} />)}
+        </div>
       </div>
     </>
   );

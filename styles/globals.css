@@ -340,46 +340,63 @@ footer span,
   @apply bg-opacity-50;
 }
 
-.filters button {
-  @apply bg-gray-100;
-  @apply text-sm;
-  @apply p-2;
-  @apply px-4;
-}
 
 .filter-heading {
-  @apply py-2;
-  @apply mr-2; 
-  @apply md:mr-4; 
-  @apply text-gray-600;
+  @apply text-gray-400;
+  @apply font-light;
+  @apply text-sm;
+  
+  @apply w-full;
+  @apply border-b-1;
+  @apply mb-2;
 }
 
-.button-group button[data-state="on"] {
+.type-group button[data-state="on"] {
   @apply bg-tertiary;
   @apply bg-opacity-50;
 }
 
-.button-group {
-  @apply inline-flex;
+.date-group {
+  @apply flex;
+  @apply flex-col;
+  @apply gap-2;
+}
+
+.date-group span {
+  @apply w-12;
+}
+
+.date-group div {
+  @apply flex;
+  @apply items-center;
+  @apply w-full;
+}
+
+.type-group {
+  @apply grid;
+  @apply grid-cols-2;
+  @apply gap-1;
+  @apply md:gap-2;
+ 
+  @apply md:grid-cols-4;
   @apply rounded;
   @apply items-center;
+  @apply w-full;
 }
 
-.button-group input {
+.date-group input {
   @apply rounded;
+  @apply bg-gray-100;
+  @apply p-2;
+  @apply flex-grow;
+  @apply text-sm;
 }
 
-.button-group button {
-  @apply border-l-1;
-}
-
-.button-group button:first-child {
-  @apply rounded-tl;
-  @apply rounded-bl;
-  @apply border-l-0;
-}
-
-.button-group button:last-child {
-  @apply rounded-tr;
-  @apply rounded-br;
+.type-group button {
+  @apply bg-gray-100;
+  @apply text-sm;
+  @apply p-2;
+  @apply rounded;
+  @apply flex-grow;
+  @apply px-4;
 }

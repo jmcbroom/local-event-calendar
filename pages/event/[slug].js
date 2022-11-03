@@ -14,8 +14,6 @@ export async function getStaticPaths(context) {
     }
   }))
 
-  console.log(events)
-
   return {
     paths: events,
     fallback: false
