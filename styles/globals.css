@@ -91,40 +91,6 @@ pre {
   @apply my-4;
   @apply bg-gray-100;
 }
-
-header, footer {
-  @apply bg-primary;
-  @apply bg-opacity-40;
-  @apply border-secondary;
-  @apply border-dashed;
-}
-
-/* Header */
-header {
-  @apply border-b-1;
-  @apply border-black;
-  @apply pl-5;
-  @apply pr-7;
-  @apply md:px-5;
-}
-
-header > .container {
-  @apply flex;
-  @apply items-center;
-  @apply justify-between;
-  @apply mx-auto;
-  @apply max-w-4xl;
-}
-
-header h1,
-footer h1 {
-  @apply text-base;
-  @apply md:text-xl;
-  @apply w-3/4;
-  @apply md:w-auto;
-  @apply hover:cursor-pointer;
-}
-
 /* Nav */
 
 nav {
@@ -166,8 +132,6 @@ footer button:hover {
 main {
   @apply max-w-6xl;
   @apply mx-auto;
-  @apply pt-4;
-  @apply md:pt-6;
   @apply px-5;
   @apply md:px-5;
   @apply pb-20;
