@@ -36,7 +36,7 @@ const EventTicketPrice = ({ event }) => {
 
 const EventCard = ({ event, showDate=true }) => {
   return (
-    <li className="list-none">
+    <li className="list-none" key={event._id}>
       <div className="flex flex-col">
         {showDate && <div className="flex items-center gap-2 text-sm text-gray-600 w-auto pb-1">
           <span className="font-medium">{dayjs(event.startTime).format("dddd, MMMM D")}</span>
