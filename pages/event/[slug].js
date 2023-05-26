@@ -53,8 +53,12 @@ export default function EventPage(props) {
         <div className="py-2">
           {event.synopsis && <p>{event.synopsis}</p>}
         </div>
+        {venue &&
+        <>
         <h2>Venue information</h2>
         <VenueCard venue={venue} />
+        </>
+        }
       </div> 
     </>
   );
