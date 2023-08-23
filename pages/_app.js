@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import "../styles/globals.css";
 import "../styles/embla.css";
+import "../styles/menu.css";
 
 import { MDXProvider } from "@mdx-js/react";
 import MarkdownComponents from "../components/MarkdownComponents";

@@ -4,14 +4,21 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Footer from './Footer';
 import Header, { sections } from './Header';
+import { Helmet } from "react-helmet";
+import { ThemeProvider } from '../hooks/ThemeContext';
 
 export default function Layout(props) {
 
   let [nav, showNav] = useState(false)
 
   return (
-    <>
+    <ThemeProvider>
 
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>calendar.det.city</title>
+        <link rel="canonical" href="https://calendar.det.city" />
+      </Helmet>
       {!nav && <Header { ...{nav, showNav, ...props}} />}
 
       {nav && 
@@ -32,6 +39,6 @@ export default function Layout(props) {
       </main>}
 
       {!nav && <Footer {...props} />}
-    </>
+    </ThemeProvider>
   )
 }

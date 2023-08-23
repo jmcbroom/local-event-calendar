@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import NavMenu from "./NavMenu";
 
 export const sections = [
   {
@@ -14,44 +12,18 @@ export const sections = [
   },
 ];
 
-const Header = ({ nav, showNav, siteTitle, description }) => {
-  const router = useRouter();
-
+const Header = ({ }) => {
   return (
-    <header>
-      <Link href="/" passHref>
-        <h1>{siteTitle}</h1>
-      </Link>
-
-      <nav>
-        <ul>
-          <Link href={`/events`} passHref>
-            <li
-              className={
-                "/events" === router.pathname
-                  ? "nav-here bg-event bg-opacity-50"
-                  : "bg-event bg-opacity-50"
-              }
-            >
-              events
-            </li>
-          </Link>
-          <Link href={`/venues`} passHref>
-            <li
-              className={
-                "/venues" === router.pathname
-                  ? "nav-here bg-venue bg-opacity-50"
-                  : "bg-venue bg-opacity-50"
-              }
-            >
-              venues
-            </li>
-          </Link>
-        </ul>
-        <div onClick={() => showNav(true)}>
-          <FontAwesomeIcon icon={faBars} className="block md:hidden h-6 hover:cursor-pointer" />
-        </div>
-      </nav>
+    <header className="bg-primary-light dark:bg-primary-dark bg-opacity-80 px-4">
+      <div className="max-w-5xl py-2 mx-auto flex items-center justify-between">
+        <Link href={`/`} passHref>
+          <h1 className="header font-bold text-gray-700 dark:text-gray-300 text-xl m-0">
+            calendar
+            <span className="text-gray-500 dark:text-gray-400">.det.city</span>
+          </h1>
+        </Link>
+        <NavMenu />
+      </div>
     </header>
   );
 };
